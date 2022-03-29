@@ -1083,19 +1083,102 @@
 // console.log(Solution([[1,0]]));
 
 // Product of Array Except Self
-function Solution(nums) {
-  var output = [];
-  var leftMult = 1;
-  var rightMult = 1;
-  for (var i = nums.length - 1; i >= 0; i--) {
-    output[i] = rightMult;
-    rightMult *= nums[i];
-  }
-  for (var j = 0; j < nums.length; j++) {
-    output[j] *= leftMult;
-    leftMult *= nums[j];
-  }
-  return output;
+// function Solution(nums) {
+//   var output = [];
+//   var leftMult = 1;
+//   var rightMult = 1;
+//   for (var i = nums.length - 1; i >= 0; i--) {
+//     output[i] = rightMult;
+//     rightMult *= nums[i];
+//   }
+//   for (var j = 0; j < nums.length; j++) {
+//     output[j] *= leftMult;
+//     leftMult *= nums[j];
+//   }
+//   return output;
+// }
+
+// console.log(Solution([-1, 1, 0, -3, 3]));
+
+// Permutations
+function Permute(nums) {
+  let res = [];
+  backtrack(nums, res);
+  return res;
 }
 
-console.log(Solution([-1, 1, 0, -3, 3]));
+function backtrack(nums, res, n = 0) {
+  if (n == nums.length - 1) {
+    res.push(nums.slice(0));
+    return ;
+  }
+  for (let i = n; i < nums.length; i++) {
+    console.log(i, n);
+    [nums[i], nums[n]] = [nums[n], nums[i]];
+    backtrack(nums, res, n + 1);
+    [nums[i], nums[n]] = [nums[n], nums[i]];
+  }
+}
+
+// function Solution(s) {
+//   let stack = 0;
+//   for (let i = 0; i <= s.length; i++) {
+//     let char = s[i];
+//     if (char == "(" || char == "*") {
+//       stack++;
+//     } else if (char == ")") {
+//       if (stack < 1) {
+//         return false;
+//       } else {
+//         stack--;
+//       }
+//     }
+//   }
+//   stack = 0;
+//   for (let i = s.length - 1; i >= 0; i--) {
+//     let char = s[i];
+//     if (char == ")" || char == "*") {
+//       stack++;
+//     } else if (char == "(") {
+//       if (stack < 1) {
+//         return false;
+//       } else {
+//         stack--;
+//       }
+//     }
+//   }
+
+//   return true;
+// }
+
+// console.log(Solution("()("));
+
+// maximum-number-of-balloons
+
+// function Ballons(text) {
+//   let ballons = 0;
+//   let map = {};
+//   for (let i of text) {
+//     if (map[i]) {
+//       map[i]++;
+//     } else {
+//       map[i] = 1;
+//     }
+//   }
+//   while(true){
+//     if(map.b && map.a && map.n && map.l>=2 && map.o>=2){
+//       ballons++
+//       map.b-=1;
+//       map.a-=1;
+//       map.l-=2;
+//       map.o-=2;
+//       map.n-=1;
+//     } else{
+//       return ballons
+//     }
+//   }
+//   return 0
+// }
+
+// console.log(Ballons('loonbalxballpoon'))
+
