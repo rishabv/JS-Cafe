@@ -122,7 +122,7 @@
 
 // console.log(max_sum);
 
-// ============================================nexct permutation
+// ============================================next permutation
 
 // let arr = [1, 2, 3, 6, 5, 4];
 // let temp = 0,
@@ -834,7 +834,7 @@
 
 // console.log(Palindrome(111113));
 
-// longest palindromic substring with non repeating characters
+// longest substring with non repeating characters
 // function Solution(s) {
 //   let start = -1,
 //     maxlen = 0;
@@ -1101,24 +1101,24 @@
 // console.log(Solution([-1, 1, 0, -3, 3]));
 
 // Permutations
-function Permute(nums) {
-  let res = [];
-  backtrack(nums, res);
-  return res;
-}
+// function Permute(nums) {
+//   let res = [];
+//   backtrack(nums, res);
+//   return res;
+// }
 
-function backtrack(nums, res, n = 0) {
-  if (n == nums.length - 1) {
-    res.push(nums.slice(0));
-    return ;
-  }
-  for (let i = n; i < nums.length; i++) {
-    console.log(i, n);
-    [nums[i], nums[n]] = [nums[n], nums[i]];
-    backtrack(nums, res, n + 1);
-    [nums[i], nums[n]] = [nums[n], nums[i]];
-  }
-}
+// function backtrack(nums, res, n = 0) {
+//   if (n == nums.length - 1) {
+//     res.push(nums.slice(0));
+//     return ;
+//   }
+//   for (let i = n; i < nums.length; i++) {
+//     console.log(i, n);
+//     [nums[i], nums[n]] = [nums[n], nums[i]];
+//     backtrack(nums, res, n + 1);
+//     [nums[i], nums[n]] = [nums[n], nums[i]];
+//   }
+// }
 
 // function Solution(s) {
 //   let stack = 0;
@@ -1181,4 +1181,476 @@ function backtrack(nums, res, n = 0) {
 // }
 
 // console.log(Ballons('loonbalxballpoon'))
+
+// remove duplicates from an array
+
+// function Rmove(nums) {
+//   let count = 0;
+//   for (const key of nums) {
+//     if (count == 0 || key > nums[count - 1]) {
+//       nums[count++] = key;
+//     }
+//   }
+//   return nums;
+// }
+
+// console.log(Rmove([1,1,1,4,5,6,6,7]));
+
+//
+// function Solution(arr) {
+//   let map = {};
+//   for (let i = 0; i < arr.length; i++) {
+//     if (map[arr[i]] === undefined) {
+//       map[arr[i]] = 1;
+//     } else {
+//       map[arr[i]]++;
+//     }
+//   }
+//   let max=0;
+//   for (const key in map) {
+//     max=Math.max(max, map[key])
+//   }
+//   return max;
+// }
+
+// console.log(Solution(["aaa", "bbb", "ccc", "bbb", "aaa", "aaa"]));
+
+// top-k-frequent-words
+
+// function Solution(words, k) {
+//   let map = {};
+//   for (let i = 0; i < words.length; i++) {
+//     i;
+//     if (map[words[i]]) {
+//       map[words[i]] = map[words[i]] + 1;
+//     } else {
+//       map[words[i]] = 1;
+//     }
+//   }
+//   let sorted = Object.keys(map).sort((a, b) => {
+//     if (map[a] == map[b]) {
+//       return a > b ? 1 : -1;
+//     } else {
+//       return map[b] - map[a];
+//     }
+//   });
+//   return sorted.slice(0, k);
+// }
+
+// console.log(
+//   Solution([
+//     "rishabh",
+//     "leetcode",
+//     "daily",
+//     "leetcode",
+//     "verma",
+//     "verma",
+//     "verma",
+//     "verma",
+//     "verma",
+//   ])
+// );
+
+// count of duplicates in a array;
+// function Solution(arr) {
+//   let res = 0;
+//   let map = {};
+//   for (let i = 0; i < arr.length; i++) {
+//     if (map[arr[i]]) {
+//       map[arr[i]] = map[arr[i]] + 1;
+//     } else {
+//       map[arr[i]] = 1;
+//     }
+//   }
+//   Object.keys(map).map((i) => {
+//     if (map[i] > 1) {
+//       res++;
+//     }
+//   });
+//   return res;
+// }
+
+// console.log(Solution([1, 2, 3, 4, 1, 4, 4, 3, 3, 3, 2, 4, 4]));
+
+//move zeros
+
+// function Solution(arr) {
+//   let pos = 0;
+//   arr.forEach((e) => {
+//     if (e != 0) {
+//       arr[pos++] = e;
+//     }
+//   });
+//   while (pos<arr.length) {
+//       arr[pos++]=0
+//   }
+//   return arr;
+// }
+
+// console.log(Solution([1, 0, 2, 0, 3, 4, 0, 0, 2, 5, 6]));
+
+// remove duplicates from an array
+
+// function Solution(nums) {
+//   let i = nums.length > 0 ? 1 : 0;
+//   nums.forEach((e) => {
+//     if (e > nums[i - 1]) {
+//       nums[i++] = e;
+//     }
+//   });
+//   return i
+// }
+
+// console.log(Solution([1,2,2,2,3,4,5,5,5,5,6,7,8]));
+
+// valid anagram
+// function Solution(s, t) {
+//   if (s.length !== t.length) {
+//     return false;
+//   }
+//   let map = {};
+//   for (let i = 0; i < s.length; i++) {
+//     if (map[s[i]]) {
+//       map[s[i]] = map[s[i]] + 1;
+//     } else {
+//       map[s[i]] = 1;
+//     }
+//   }
+
+//   for (let i = 0; i < t.length; i++) {
+//     if (!map[t[i]]) {
+//       return false;
+//     }
+//     map[t[i]]--;
+//   }
+
+//   return true;
+// }
+
+// console.log(Solution("anagram", "naggram"));
+
+// Find pivot index
+
+// function Solution(nums) {
+//   let leftsum = 0,
+//     rightsum = 0;
+//   for (let i = 1; i < nums.length; i++) {
+//     rightsum += nums[i];
+//   }
+//   for (let i = 0; i < nums.length; i++) {
+//     const element = nums[i];
+//     if (leftsum === rightsum) {
+//       return i;
+//     } else {
+//       leftsum += element;
+//       rightsum -= nums[i + 1];
+//     }
+//   }
+//   return -1;
+// }
+
+// console.log(Solution([1, 7, 3, 6, 5, 6]));
+
+// var intersect = function (nums1, nums2) {
+//   let res = [];
+//   let map = {};
+//   nums1.forEach((e) => {
+//     if (map[e]) {
+//       map[e]++;
+//     } else {
+//       map[e] = 1;
+//     }
+//   });
+//   nums2.forEach((e) => {
+//     if (map[e] && map[e] > 0) {
+//       res.push(e)
+//       map[e]--
+//     }
+//   });
+//   return res;
+// };
+
+// console.log(intersect([4, 9, 5], [9, 4, 9, 8, 4]));
+
+// maximum roduct subarray
+
+// function Solution(nums) {
+//   let max = 0;
+//   for (let i = 0; i < nums.length; i++) {
+
+//   }
+//   return res;
+// }
+
+// Plus one
+
+// function Solution(digits) {
+//   for (let i = digits.length - 1; i >= 0; i--) {
+//     if (digits[i] !== 9) {
+//       digits[i]++;
+//       return digits;
+//     }
+//     digits[i] = 0;
+//   }
+//   digits.unshift(1);
+//   return digits;
+// }
+
+// console.log(Solution([6, 1, 4, 5, 3, 9, 0, 1, 9, 6, 7, 0, 5, 5, 4, 3]));
+
+// Maximum product subarray
+
+// function Solution(nums) {
+//   let max = nums[0],
+//     min = nums[0],
+//     result = nums[0];
+//   for (let i = 1; i < nums.length; i++) {
+//     const temp = max;
+//     max = Math.max(Math.max(max * nums[i], min * nums[i]), nums[i]);
+//     min = Math.min(Math.min(temp * nums[i], min * nums[i]), nums[i]);
+//     if (max > result) {
+//       result = max;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(Solution([6, -1, 4, 0, 3, 9, 1]));
+// Maximum sum subarray leetcode
+// function Solution(nums) {
+//   let max = nums[0],
+//     min = nums[0],
+//     result = nums[0];
+//   for (let i = 1; i < nums.length; i++) {
+//     const temp = max;
+//     max = Math.max(Math.max(max + nums[i], min + nums[i]), nums[i]);
+//     min = Math.min(Math.min(temp + nums[i], min + nums[i]), nums[i]);
+//     if (max > result) {
+//       result = max;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(Solution([-2,1,-3,4,-1,2,1,-5,4]));
+
+// Max Consecutive Ones
+
+// function Solution(nums) {
+//   let bool = false,
+//     max = 0,
+//     count = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] == 1) {
+//       count++;
+//     } else {
+//       count = 0;
+//     }
+//     max = Math.max(count, max);
+//   }
+//   return max;
+// }
+
+// console.log(Solution([1, 1, 0, 1, 1, 1, 0, 3, 1, 1, 1, 1, 1]));
+
+// convert binary program
+
+// function binary(num) {
+//   let arr = [];
+//   let rem = 0;
+//   let res = 0;
+//   while (num > 0) {
+//     rem = num % 2;
+//     num = Math.floor(num / 2);
+//     arr.push(rem);
+//   }
+//     for (let i = 0; i < arr.length; i++) {
+//       if (arr[i] == 1) {
+//         arr[i] = 0;
+//       } else {
+//         arr[i] = 1;
+//       }
+//     }
+//   let rank = 0;
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     res = res + 2 ** rank;
+//     rank++;
+//   }
+//   console.log(res);
+//   return arr;
+// }
+// console.log(binary(5));
+
+// letter combinations
+
+// const letterCombinations = (digits) => {
+//   if (digits == null || digits.length === 0) return [];
+
+//   const map = {
+//     2: "abc",
+//     3: "def",
+//     4: "ghi",
+//     5: "jkl",
+//     6: "mno",
+//     7: "pqrs",
+//     8: "tuv",
+//     9: "wxyz",
+//   };
+
+//   const res = [];
+//   const go = (i, s) => {
+//     if (i === digits.length) {
+//       res.push(s, digits.length);
+//       return;
+//     }
+
+//     for (const c of map[digits[i]]) {
+//       go(i + 1, s + c);
+//     }
+//   };
+
+//   go(0, "");
+//   return res;
+// };
+
+// console.log(letterCombinations([2, 7]));
+
+// longest substring without repeating characters
+// function Substring(s) {
+//   let seen = {},
+//     start = 0,
+//     maxlen = 0;
+//   for (let i = 0; i < s.length; i++) {
+//     if (seen[s[i]]!==undefined) {
+//       start = Math.max(seen[s[i]] + 1, start);
+//     }
+//     seen[s[i]]= i;
+//     console.log(start, i);
+//     maxlen = Math.max(i - start + 1, maxlen);
+//   }
+//   return maxlen;
+// }
+
+// console.log(Substring("abcabcbb"));
+
+// function firstUnique(s) {
+//     let map={}
+//     for (let i = 0; i < s.length; i++) {
+//         if(map[s[i]]!==undefined){
+//             map[s[i]]=2
+//         } else{
+//             map[s[i]]=1
+//         }
+//     }
+//     for (let i = 0; i < s.length; i++) {
+//         if (map[s[i]]==1 && map[s[i]]) {
+//             return i
+//         }
+//     }
+//     return -1
+// }
+
+// console.log(firstUnique("loveleetcode"));
+
+// function LCS(text1, text2) {
+//   text1 = text1.split("");
+//   text2 = text2.split("");
+//   let count = 0;
+//   text1.forEach((element) => {
+//     if (text2.includes(element)) {
+//       count++;
+//     }
+//   });
+//   return count;
+// }
+
+// console.log(LCS("ezupkr", "ubmrapg"));
+
+// var a= 21
+// function Test(params) {
+//     console.log(a);
+//     var a=10
+// }
+// Test()
+
+// Rotate the matrix on 90 degree
+
+// function Rotate(matrix) {
+//   for (let i = 0; i < matrix.length; i++) {
+//     for (let j = i + 1; j < matrix[i].length; j++) {
+//       [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
+//     }
+//   }
+//   for (let i = 0; i < matrix.length; i++) {
+//     for (let j = 0; j < matrix.length/2; j++) {
+//         console.log(matrix[i][j] , matrix[i][matrix.length-1-j],j);
+//         [matrix[i][j] , matrix[i][matrix.length-1-j]]=[ matrix[i][matrix.length-1-j],matrix[i][j]]
+//     }
+//   }
+//   return matrix;
+// }
+
+// console.log(Rotate([
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ]));
+
+// Flips to Make the Binary String Alternating
+// function Flip(s) {
+//   let stack = [];
+//   for (let i = 0; i < s.length; i++) {
+//     stack.push(s[i]);
+
+//   }
+//   return s;
+
+// }
+
+// console.log(Flip("111000"));
+
+// Median of Two Sorted Arrays
+// function Median(nums1, nums2) {
+//   let m = nums1.length;
+//   let n = nums2.length;
+//   let len = nums1.length + nums2.length;
+
+//   var insertPos = m + n - 1;
+//   m--;
+//   n--;
+//   while (n >= 0) {
+//     nums1[insertPos--] = nums1[m] > nums2[n] ? nums1[m--] : nums2[n--];
+//   }
+
+//   console.log(nums1);
+//   return Math.floor(nums1.length % 2
+//     ? nums1[Math.floor(len / 2)]
+//     : (nums1[len / 2 - 1] + nums1[len / 2]) / 2);
+// }
+
+// console.log(Median([1, 3], [2]));
+
+// single number
+// function Solution(nums) {
+//   let val = nums[0];
+//   for (let i = 1; i < nums.length; i++) {
+//     val ^= nums[i];
+//   }
+//   return val;
+// }
+
+// Best time to buy and sell stocks
+
+// function Solution(nums) {
+//   let time = 0;
+//   let max = nums[nums.length - 1];
+//   for (let i = nums.length-1; i >= 0; i--) {
+//     max = Math.max(nums[i], max);
+//     time = Math.max(time, max - nums[i]);
+//     console.log(max);
+//   }
+//   return time;
+// }
+
+// console.log(Solution([7, 1, 5, 3, 6, 4]));
 
