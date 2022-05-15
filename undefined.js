@@ -120,7 +120,7 @@ let flattened = [].concat(...arr);
 
 // #uses of closure
 
-// MOdule design pattern
+// Module design pattern
 // iterators
 // settimeouts
 // Functions like once
@@ -191,3 +191,13 @@ let flattened = [].concat(...arr);
 // 2. Login Functionality Implementation    
 
 // Event Loop. Hoisting, Closures, HOC, LifeCycle Mothods, Key Prop in React, Creating a form app with Generic button.
+
+// map and foreach
+// Array.prototype.concat()
+
+// if(i===1 && i === 2 && i === 3)
+// console.log(“yes”)
+// else console.log(“yes”)
+// What will you implement " i " so that we always get “yes”
+
+// Write a program for sum(1)(2)

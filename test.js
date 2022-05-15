@@ -604,7 +604,6 @@
 //   for(let i=0;i<zero;i++) nums.push(0)
 //   for(let i=0;i<one;i++) nums.push(1)
 //   for(let i=0;i<two;i++) nums.push(2)
-
 //   return nums;
 // }
 
@@ -638,7 +637,6 @@
 //       left++;
 //     }
 //   }
-
 //   return arr;
 // };
 
@@ -662,6 +660,7 @@
 //   [10, 11, 16, 20],
 //   [23, 30, 34, 60],
 // ];
+
 // console.log(Search(arr,13));
 
 // function Solution(matrix, target) {
@@ -1654,3 +1653,21 @@
 
 // console.log(Solution([7, 1, 5, 3, 6, 4]));
 
+// Subarray with 0 sum
+
+// function Solution(nums, k) {
+//   let sum = 0;
+//   let count = 0;
+//   let map = {};
+//   map[0] = 1;
+//   for (let i = 0; i < nums.length; i++) {
+//     sum += nums[i];
+//     if (map[sum - k] !== undefined) {
+//       count += map[sum - k];
+//     }
+//     map[sum] = (map[sum] ? map[sum] : 0) + 1;
+//   }
+//   return count;
+// }
+
+// console.log(Solution([1, 2, 3], 3));
