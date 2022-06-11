@@ -2,6 +2,14 @@
 // => let var const
 // What is Hoisting? How to prevent Hoisting?
 // closures
+// #uses of closure
+// Module design pattern
+// -iterators
+// -settimeouts
+// -Functions like once
+// -maintaining state in async world
+// -Currying
+// -memoize
 // event loop and call stack
 // call, apply, bind
 // Promises with CLosure and settimeout
@@ -9,7 +17,7 @@
 // flatten the array
 // null vs undefined
 // map vs foreach
-// polyfills (map,bind,,apply, filter, reduce and some, every, findIndex, find, indexOf)
+// polyfills (map,bind,call,apply, filter, reduce and some, every, findIndex, find, indexOf)
 // debouncing and throttling
 // memoization with fibbonacci
 // Oauth2.0
@@ -32,8 +40,6 @@
 // progressive hydration
 // value type and reference types
 // What is difference between function expression and function declaration
-
-
 
 // onload and domcontentloaded
 // difference between prevent default vs stop propagation
@@ -76,3 +82,19 @@
 // => shallow comparing and deep comparing
 // => Pure components
 // => useCallback, usememo, useReducer, useForwardRef
+
+// Context API
+// HOC
+// How to stop re-rendering
+// Error boundaries
+
+
+// #some design patterns for LLD
+// FActory
+// Abstract FActory
+// signleton
+// observer
+// builder
+// Adaptor 
+// Strategy
+// facade

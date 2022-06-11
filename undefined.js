@@ -1,8 +1,8 @@
 // flatten array to the one level
 
-let arr = [1, 3, 4, [6, 7, [1, 2, 3]], 8, 0, 1];
+// let arr = [1, 3, 4, [6, 7, [1, 2, 3]], 8, 0, 1];
 
-let flattened = [].concat(...arr);
+// let flattened = [].concat(...arr);
 
 //custom flat function for flattening the array
 // i.e. polyfill for .flat()
@@ -118,16 +118,6 @@ let flattened = [].concat(...arr);
 // array methods
 // useMemo, useCallback
 
-// #uses of closure
-
-// Module design pattern
-// iterators
-// settimeouts
-// Functions like once
-// maintaining state in async world
-// Currying
-// memoize
-
 // setTimeout + Closures Interview Question 🔥
 // function x() {
 //   for (let i = 0; i < 5; i++) {
@@ -172,32 +162,30 @@ let flattened = [].concat(...arr);
 
 // debounce(handleSearch)
 
-// -closures
-// -event loop
-// -bind
-// -call
-// - event bubbling and binding
-// - data structure question to solve
-// -hooks
-// -why react
-// -Redux flow
-// -Context API
-// -HOC
-// -How to stop re-rendering
-// -Error boundaries
-
-// React and Javascript concept.
-// 1, Closure, Event Loop, hoisting, React hooks, redux.
-// 2. Login Functionality Implementation    
-
-// Event Loop. Hoisting, Closures, HOC, LifeCycle Mothods, Key Prop in React, Creating a form app with Generic button.
-
-// map and foreach
-// Array.prototype.concat()
-
 // if(i===1 && i === 2 && i === 3)
 // console.log(“yes”)
 // else console.log(“yes”)
 // What will you implement " i " so that we always get “yes”
 
 // Write a program for sum(1)(2)
+// FlatMap() function //-> it implemets the flat feature and map function
+// ReduceRight function //-> it will work as reduce function but it iterates from right to left
+
+// let arr1=[1,2,3,4,5,6,7,8,9]
+// let sum=arr1.reduce((accumulator,s)=>{
+//     return accumulator+s;
+// })
+
+// console.log(sum);
+
+// let debounce = (func, t) => {
+//   let timer;
+//   return function (...args) {
+//     if (timer) clearTimeout(timer);
+//     let context = this;
+//     setTimeout(() => {
+//       timer = null;
+//       func.apply(context, args);
+//     }, t);
+//   };
+// };
